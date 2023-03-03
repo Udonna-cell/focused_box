@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+    font-size: 15pt;
+    background: #23374D;
+}
+header {
+  min-height: 100vh;
+}
+.container,
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 3s;
+}
+.item {
+  padding: 2.5rem;
+  background: #0DB9D1;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+.container:hover > :not(:hover) {
+  opacity: .6;
+  transform: scale(0.9);
+}
