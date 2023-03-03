@@ -9,6 +9,7 @@ body {
 }
 header {
   min-height: 100vh;
+  flex-direction: column;
 }
 .container,
 header {
@@ -22,8 +23,61 @@ header {
   background: #0DB9D1;
   border-radius: 0.5rem;
   margin: 0.5rem;
+  transition: .3s;
+}
+.item:active {
+  transform: scale(0.6);
 }
 .container:hover > :not(:hover) {
   opacity: .6;
-  transform: scale(0.9);
+  transform: scale(0.8);
+}
+
+button.cta {
+  border: none;
+  background: transparent;
+  outline: none;
+  position: relative;
+  margin: 2rem auto;
+  padding: 12px 18px;
+}
+button.cta > span {
+  color: #fff;
+  font-size: large;
+  font-weight: bolder;
+}
+button.cta::before {
+  content: "";
+  width: 45px;
+  height: 45px;
+  background: #0DB9D1;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+button.cta:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.cta:active {
+  transform: scale(0.95);
+}
+
+.cta svg {
+ position: relative;
+ top: 0;
+ margin-left: 10px;
+ fill: none;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ stroke: #fff;
+ stroke-width: 2;
+ transform: translateX(-5px);
+ transition: all 0.3s ease;
+}
+.cta:hover svg {
+ transform: translateX(0);
 }
